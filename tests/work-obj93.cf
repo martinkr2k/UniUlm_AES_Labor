@@ -1,0 +1,7 @@
+v 4
+file . "led_switch.vhdl" "ab9f3cdb0d82426c087ded423b5f3d06d74469de" "20240501112551.820":
+  entity led_switch at 1( 0) + 0 on 15;
+  architecture dataflow of led_switch at 11( 183) + 0 on 16;
+file . "led_switch_tb.vhdl" "9a60e6275ad1e3ddc842c0309b2d9db825550919" "20240501114738.537":
+  entity led_switch_tb at 1( 0) + 0 on 19;
+  architecture behavior of led_switch_tb at 9( 138) + 0 on 20;
