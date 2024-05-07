@@ -1,0 +1,24 @@
+|Mux21
+SW[0] => ledr.IN0
+SW[0] => ledr.IN0
+SW[1] => ledr.IN1
+SW[2] => ledr.IN1
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+ledr[0] <= ledr.DB_MAX_OUTPUT_PORT_TYPE
+ledr[1] <= <GND>
+ledr[2] <= <GND>
+ledr[3] <= <GND>
+ledr[4] <= <GND>
+ledr[5] <= <GND>
+ledr[6] <= <GND>
+ledr[7] <= <GND>
+ledr[8] <= <GND>
+ledr[9] <= <GND>
+
+
