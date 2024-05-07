@@ -1,0 +1,31 @@
+|led_switch
+sw[0] => ledr[0].DATAIN
+sw[0] => ledr[4].DATAIN
+sw[0] => ledr[3].DATAIN
+sw[0] => ledr[2].DATAIN
+sw[0] => ledr[1].DATAIN
+sw[1] => ledr[5].DATAIN
+sw[1] => ledr[9].DATAIN
+sw[1] => ledr[8].DATAIN
+sw[1] => ledr[7].DATAIN
+sw[1] => ledr[6].DATAIN
+sw[2] => ~NO_FANOUT~
+sw[3] => ~NO_FANOUT~
+sw[4] => ~NO_FANOUT~
+sw[5] => ~NO_FANOUT~
+sw[6] => ~NO_FANOUT~
+sw[7] => ~NO_FANOUT~
+sw[8] => ~NO_FANOUT~
+sw[9] => ~NO_FANOUT~
+ledr[0] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[1] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[2] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[3] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[4] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[5] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[6] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[7] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[8] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[9] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
