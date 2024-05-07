@@ -1,0 +1,7 @@
+v 4
+file . "segment_dec_tb.vhdl" "8914e64338721d98ecd54c4997aef49fc2db2405" "20240506094945.822":
+  entity segment_dec_tb at 1( 0) + 0 on 81;
+  architecture tb of segment_dec_tb at 7( 91) + 0 on 82;
+file . "segment_dec.vhdl" "ffd889feac98411a946d337b90cec8c5bd1bc97b" "20240506094943.733":
+  entity segment_dec at 1( 0) + 0 on 79;
+  architecture dataflow of segment_dec at 11( 192) + 0 on 80;

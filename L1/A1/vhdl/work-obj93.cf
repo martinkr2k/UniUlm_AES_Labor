@@ -1,0 +1,7 @@
+v 4
+file . "light_tb.vhdl" "5d3dc849de2e43cde3fcd4b0af2f6160d78942de" "20240503191728.584":
+  entity light_tb at 1( 0) + 0 on 17;
+  architecture tb of light_tb at 7( 79) + 0 on 18;
+file . "light.vhdl" "e66701dd7c0f411108f1bb0c9efcf31ed003829b" "20240503191726.301":
+  entity light at 1( 0) + 0 on 15;
+  architecture dataflow of light at 12( 156) + 0 on 16;
