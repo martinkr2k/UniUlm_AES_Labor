@@ -1,0 +1,15 @@
+v 4
+file . "d_flipflop_tb.vhdl" "2a7cc5e167ee1fc6ddffd439c6142b4541f5088c" "20240511222913.537":
+  entity d_flipflop_tb at 1( 0) + 0 on 49;
+  architecture tb of d_flipflop_tb at 8( 89) + 0 on 50;
+file . "d_latch.vhdl" "a2a2eb5747083b38fb6d66b30742c31b304f7648" "20240511222811.289":
+  entity d_latch at 1( 0) + 0 on 42;
+  architecture structural_nor of d_latch at 13( 166) + 0 on 43;
+  architecture structural_nand of d_latch at 25( 395) + 0 on 44;
+file . "rs_latch.vhdl" "2cd0f31b1f3bf81d65517fe3829910ccef0e72f7" "20240511222806.666":
+  entity rs_latch at 1( 0) + 0 on 39;
+  architecture structural_nor of rs_latch at 14( 192) + 0 on 40;
+  architecture structural_nand of rs_latch at 35( 608) + 0 on 41;
+file . "d_flipflop.vhdl" "8d3ece3d9b58877d1c3d6b763f4947fa0b62bdfa" "20240511222816.153":
+  entity d_flipflop at 1( 0) + 0 on 45;
+  architecture dataflow of d_flipflop at 12( 184) + 0 on 46;
