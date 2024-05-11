@@ -11,7 +11,7 @@ architecture TB of rs_latch_tb is
 
   begin 
 
-    RSL : entity work.rs_latch(STRUCTURAL) port map (s_clk, s_r, s_s, s_q);
+    RSL : entity work.rs_latch(STRUCTURAL_NAND) port map (s_clk, s_r, s_s, s_q);
     
     process 
     begin 

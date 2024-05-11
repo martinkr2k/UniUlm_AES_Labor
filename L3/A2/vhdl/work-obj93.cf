@@ -1,0 +1,15 @@
+v 4
+file . "d_latch_fpga.vhdl" "be2c785f6f73d13c872c8b0feab308648dc55025" "20240511220359.476":
+  entity d_latch_fpga at 1( 0) + 0 on 44;
+  architecture structural_nand of d_latch_fpga at 12( 188) + 0 on 45;
+file . "d_latch.vhdl" "a2a2eb5747083b38fb6d66b30742c31b304f7648" "20240511215954.436":
+  entity d_latch at 1( 0) + 0 on 39;
+  architecture structural_nor of d_latch at 13( 166) + 0 on 40;
+  architecture structural_nand of d_latch at 25( 395) + 0 on 41;
+file . "rs_latch.vhdl" "2cd0f31b1f3bf81d65517fe3829910ccef0e72f7" "20240511215852.223":
+  entity rs_latch at 1( 0) + 0 on 31;
+  architecture structural_nor of rs_latch at 14( 192) + 0 on 32;
+  architecture structural_nand of rs_latch at 35( 608) + 0 on 33;
+file . "d_latch_tb.vhdl" "61bf791ab6c623d2840f2908e6c75ee5417c4cdf" "20240511215957.057":
+  entity d_latch_tb at 1( 0) + 0 on 42;
+  architecture tb of d_latch_tb at 8( 84) + 0 on 43;

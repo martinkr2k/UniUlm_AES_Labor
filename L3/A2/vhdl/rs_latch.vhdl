@@ -11,7 +11,7 @@ entity rs_latch is
 end rs_latch;
 
 
-architecture STRUCTURAL of rs_latch is 
+architecture STRUCTURAL_NOR of rs_latch is 
   signal s_rg, s_sg : std_logic;
   signal s_qa, s_qb : std_logic;  
   ATTRIBUTE KEEP : BOOLEAN;
@@ -30,8 +30,7 @@ architecture STRUCTURAL of rs_latch is
     
     p_q <= s_qa;
 
-end STRUCTURAL;
-
+end STRUCTURAL_NOR;
 
 architecture STRUCTURAL_NAND of rs_latch is 
   signal s_rg, s_sg : std_logic;
