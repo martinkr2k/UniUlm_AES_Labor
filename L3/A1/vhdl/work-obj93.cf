@@ -1,0 +1,7 @@
+v 4
+file . "rs_latch.vhdl" "fac983de2961c21a5d827720dab550583273f866" "20240511140020.419":
+  entity rs_latch at 1( 0) + 0 on 33;
+  architecture structural of rs_latch at 14( 192) + 0 on 34;
+file . "rs_latch_tb.vhdl" "20716a47388414f2ea8007e4b53e35731122eb31" "20240511140022.248":
+  entity rs_latch_tb at 1( 0) + 0 on 35;
+  architecture tb of rs_latch_tb at 8( 86) + 0 on 36;
