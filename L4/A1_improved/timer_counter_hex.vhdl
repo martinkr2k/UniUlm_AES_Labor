@@ -4,24 +4,36 @@ use ieee.std_logic_unsigned.all;
 use work.constant_package.all;
 use IEEE.numeric_std.all;
 
-entity timer_counter is 
+entity timer_counter_hex is 
     generic (
         G_TIMER_MAX : positive := 10
     );
     port (
         CLOCK_50 : in std_logic;
-        COUNT : out std_logic_vector(3 downto 0)
+        HEX0 : out std_logic_vector(6 downto 0)
     );
-end timer_counter;
+end timer_counter_hex;
 
-
-architecture BEHAVIOR of timer_counter is
+architecture BEHAVIOR of timer_counter_hex is 
     signal s_pulse : std_logic;
-    signal s_tmp_count : unsigned(3 downto 0) := (others => '0');
+    signal s_count : std_logic_vector(3 downto 0);
+    begin 
+        
+        TC : entity work.timer_counter(BEHAVIOR) generic map (G_TIMER_MAX) port map (CLOCK_50, s_count);
+        HX0: entity work.segment_dec(TEST_OUTP) port map (s_count, HEX0);
+
+end BEHAVIOR;
+
+
+architecture BEHAVIOR_2 of timer_counter_hex is
+
+    signal s_pulse : std_logic;
+    signal s_tmp_count : std_logic_vector(3 downto 0) := (others => '0');
 
     begin 
 
         TIM : entity work.timer(BEHAVIOR) generic map (G_TIMER_MAX) port map (CLOCK_50, s_pulse);
+        HX0: entity work.segment_dec(TEST_OUTP) port map (s_tmp_count, HEX0);
 
         process(s_pulse)
         begin 
@@ -37,4 +49,4 @@ architecture BEHAVIOR of timer_counter is
 
         end process;
 
-end BEHAVIOR;
+end BEHAVIOR_2;

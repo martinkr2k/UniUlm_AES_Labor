@@ -22,37 +22,37 @@ architecture DATAFLOW of segment_dec is
 end DATAFLOW;
 
 architecture TEST_OUTP of segment_dec is 
-  begin
-    process (p_imp_bin)
-    begin    
+    begin 
 
-      case p_imp_bin is
-        when "0000" =>
-          report "output: 0";
-        when "0001" =>
-          report "output: 1";
-        when "0010" =>
-          report "output: 2";
-        when "0011" =>
-          report "output: 3";
-        when "0100" =>
-          report "output: 4";
-        when "0101" =>
-          report "output: 5";
-        when "0110" =>
-          report "output: 6";
-        when "0111" =>
-          report "output: 7";
-        when "1000" =>
-          report "output: 8";
-        when "1001" =>
-          report "output: 9";
-        when others => 
-          report "output: error!";
-      end case;
+      process (p_imp_bin) 
+      begin 
 
-    end process;
+        case p_imp_bin is
+          when "0000" =>
+            report "output: 0";
+          when "0001" =>
+            report "output: 1";
+          when "0010" =>
+            report "output: 2";
+          when "0011" =>
+            report "output: 3";
+          when "0100" =>
+            report "output: 4";
+          when "0101" =>
+            report "output: 5";
+          when "0110" =>
+            report "output: 6";
+          when "0111" =>
+            report "output: 7";
+          when "1000" =>
+            report "output: 8";
+          when "1001" =>
+            report "output: 9";
+          when others => 
+            report "output: error!";
+        end case;
 
+      end process;
+  
 end TEST_OUTP;
-
 

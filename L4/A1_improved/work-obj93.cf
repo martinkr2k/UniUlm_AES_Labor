@@ -1,12 +1,23 @@
 v 4
-file . "timer_counter.vhdl" "eb5890410970f74d86368b8f75b9824eafc2514c" "20240513074340.910":
-  entity timer_counter at 1( 0) + 0 on 50;
-  architecture behavior of timer_counter at 18( 338) + 0 on 51;
+file . "timer_counter_hex_tb.vhdl" "2a9a6dc0b123c9d62cb736cc7c2b14abc87847ad" "20240513103148.094":
+  entity timer_counter_hex_tb at 1( 0) + 0 on 162;
+  architecture tb of timer_counter_hex_tb at 11( 193) + 0 on 163;
+file . "segment_dec.vhdl" "931c1ad8ba0794033d7073e5e4eb16078ec22b73" "20240513103144.148":
+  entity segment_dec at 1( 0) + 0 on 156;
+  architecture dataflow of segment_dec at 11( 192) + 0 on 157;
+  architecture test_outp of segment_dec at 24( 1241) + 0 on 158;
+file . "timer_counter.vhdl" "5dff6b9fd006fe20ff7afecef5a96f138ed9092c" "20240513102248.195":
+  entity timer_counter at 1( 0) + 0 on 124;
+  architecture behavior of timer_counter at 18( 338) + 0 on 125;
 file . "constant_package.vhdl" "4bb2beb395f8235d85f7adc5333081c0b4530a39" "20240512182742.001":
   package constant_package at 1( 0) + 0 on 11;
 file . "timer_tb.vhdl" "fe46056b9d2c6e27b8a2de225ee1250b578458ab" "20240512184839.965":
   entity timer_tb at 1( 0) + 0 on 46;
   architecture tb of timer_tb at 11( 169) + 0 on 47;
-file . "timer.vhdl" "bad41e8efed25a1a482ec9d429471eb3653b5a9d" "20240513074124.107":
-  entity timer at 1( 0) + 0 on 48;
-  architecture behavior of timer at 18( 303) + 0 on 49;
+file . "timer.vhdl" "bad41e8efed25a1a482ec9d429471eb3653b5a9d" "20240513103141.738":
+  entity timer at 1( 0) + 0 on 154;
+  architecture behavior of timer at 18( 303) + 0 on 155;
+file . "timer_counter_hex.vhdl" "8da0f477b21251287715193152f2d6b276898435" "20240513103146.323":
+  entity timer_counter_hex at 1( 0) + 0 on 159;
+  architecture behavior of timer_counter_hex at 17( 344) + 0 on 160;
+  architecture behavior_2 of timer_counter_hex at 28( 690) + 0 on 161;
