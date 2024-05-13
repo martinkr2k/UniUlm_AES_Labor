@@ -1,4 +1,0 @@
-v 4
-file . "segment_dec.vhdl" "ffd889feac98411a946d337b90cec8c5bd1bc97b" "20240510091502.566":
-  entity segment_dec at 1( 0) + 0 on 11;
-  architecture dataflow of segment_dec at 11( 192) + 0 on 12;
