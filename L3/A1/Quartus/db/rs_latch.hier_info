@@ -1,0 +1,8 @@
+|rs_latch
+p_clk => s_rg.IN0
+p_clk => s_sg.IN0
+p_r => s_rg.IN1
+p_s => s_sg.IN1
+p_q <= p_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
