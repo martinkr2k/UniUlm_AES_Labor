@@ -46,7 +46,15 @@ architecture BEHAVIOR of crc_checker is
                 if (rising_edge(P_CLOCK_50)) then 
 
                     s_counter <= s_counter + 1;
-                    s_shift_ploynom <= shift_right(s_shift_ploynom, 1);
+
+                    -- TEMPORARY easy shift operation
+                    for i in 31 downto 1 loop 
+
+                        
+                    
+                    end loop;
+                    -- END TEMPORARY
+
                     for i in 31 downto 0 loop
                         report std_logic'image(s_shift_ploynom(i)); 
                     end loop;
