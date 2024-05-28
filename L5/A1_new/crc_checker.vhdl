@@ -27,7 +27,7 @@ architecture BEHAVIOR of crc_checker is
 
     begin 
 
-        process (CLOCK_50)
+        process (CLOCK_50, P_RESET)
         begin
 
             if (P_RESET = '1') then 
@@ -48,7 +48,7 @@ architecture BEHAVIOR of crc_checker is
 
                 P_OUTPUT <= (others => '0');
                 
-                report "in init!";
+                --report "in init!";
             else 
 
                 if (rising_edge(CLOCK_50)) then
@@ -60,11 +60,10 @@ architecture BEHAVIOR of crc_checker is
                         P_OUTPUT <= (others => '0');
                         P_OUTPUT(31 downto 7) <= P_MESSAGE(24 downto 0);
                         P_OUTPUT(6 downto 0) <= s_proc_mess(6 downto 0);
-                        report "COMPLETED!!";
+                        --report "COMPLETED!!";
 
                     else 
                         -- PROCESSING STEP 
-                        --report "in processing!";
 
                         -- XOR 
                         if (s_proc_mess(to_integer(s_counter_top)) = '1') then
