@@ -20,17 +20,20 @@ architecture BEHAVIOR of crc_checker_hardware is
 
     signal s_output : std_logic_vector(31 downto 0) := (others => '0');
     signal s_enable : std_logic := '0';
-    signal s_in_out : std_logic := '0'; -- 0 = Eingabe / 1 = Ausgabe 
+    signal s_in_out : std_logic := '0'; -- 0 = Input / 1 = Output 
     signal s_mux : std_logic_vector(3 downto 0) := (others => '0');
 
 
 
-    begin 
+    begin
+        
+        CRC : entity work.crc_checker(BEHAVIOR) port map (s_start_processing, s_message, s_polynom, CLOCK_50, s_output, s_enable)
 
         process (CLOCK_50, KEY, SW) 
         begin 
 
             if (s_in_out = '1') then 
+                -- DISPLAY OUTPUT
 
                 if (SW(8) = '0' AND SW(9) = '0') then
                     -- 00 - 07
@@ -51,6 +54,7 @@ architecture BEHAVIOR of crc_checker_hardware is
                 end if; 
             
             else 
+                -- DISPLAY INPUT
 
                 if (SW(8) = '0' AND SW(9) = '0') then
                     -- 00 - 07
@@ -72,44 +76,24 @@ architecture BEHAVIOR of crc_checker_hardware is
 
             end if;
 
-            if (KEY(0) = '1') then
-                -- -- RESET
-                -- s_start_processing <= '1';
-                -- s_message <= (others => '0');
-                -- s_polynom <= (others => '0');
-                -- s_in_out <= '0';
-                -- s_mux <= (others => '0');
-                
-                -- TEMPORARY: SWITCH DISPLAY INPUT/OUTPUT
-                if (s_in_out = '0') then 
-                    s_in_out <= '1';
-                    LEDR(8) <= '1';
-                else 
-                    s_in_out <= '0';
-                    LEDR(9) <= '0';
-                end if;
-                
-            elsif (KEY(1) = '1') then 
-                -- START PROCESSING
-                s_start_processing <= '1';
-            
-            elsif (KEY(2) = '1') then
-                -- POLYNOM
-                LEDR(7 downto 0) <= s_polynom;
+            if (KEY(0) = '1') then   
+                -- RESET
+                start_processing <= '1';
+                s_message <= (others => '0');
+                s_polynom <= (others => '0');
+                s_in_out <= '0';
+                s_mux <= "00";
 
-                if (KEY(3) = '1') then
-                    -- CHANGE POLYNOM
-                    s_polynom <= SW(7 downto 0);
-                    LEDR(7 downto 0) <= SW(7 downto 0); 
-                end if;
-
-            elsif (KEY(3) = '1') then 
-                -- EINGABE BESTAETIGEN
+            elsif (KEY(3) = '1' AND KEY(2) = '0') then 
+                -- CONFIRM INPUT
                 
                 if (SW(8) = '0' AND SW(9) = '0') then
                     -- 00 - 07
                     s_message(7 downto 0) <= SW(7 downto 0);
                     LEDR(7 downto 0) <= s_message(7 downto 0);
+
+                    -- START PROCESSING
+                    s_start_processing <= '1';
 
                 elsif (SW(8) = '1' AND SW(9) = '0') then 
                     -- 08 - 15
@@ -126,7 +110,27 @@ architecture BEHAVIOR of crc_checker_hardware is
                     s_message(31 downto 24) <= SW(7 downto 0);
                     LEDR(7 downto 0) <= s_message(31 downto 24);
                 
-                end if; 
+                end if;
+
+            elsif (KEY(2) = '1') then
+                -- SHOW POLYNOM
+                LEDR(7 downto 0) <= s_polynom;
+
+                if (KEY(1) = '1') then
+                    -- CHANGE POLYNOM
+                    s_polynom <= SW(7 downto 0);
+                    LEDR(7 downto 0) <= SW(7 downto 0); 
+                end if;
+
+            elsif (KEY(3) = '1') then 
+                -- SWITCH DISPLAY INPUT <-> OUTPUT
+                if (s_in_out = '0') THEN
+                    s_in_out <= '1';
+                    LEDR(8) <= '1';
+                else 
+                    s_in_out <= '0';
+                    LEDR(8) <= '0';
+                end if;
             
             else
                 s_start_processing <= '0';
