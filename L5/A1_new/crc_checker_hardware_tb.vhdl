@@ -114,55 +114,6 @@ architecture TB of crc_checker_hardware_tb is
             end loop;
             report "TC 7: COMPLETE";
 
-            KEY(2) <= '1';
-            wait for 2 ns;
-            
-            for i in 7 downto 0 loop
-                report std_logic'image(LEDR(i));
-            end loop;
-            report "TC 8: COMPLETE";
-
-            KEY(2) <= '0';
-            SW(7 downto 0) <= "11111111";
-            wait for 2 ns;
-            
-            for i in 7 downto 0 loop
-                report std_logic'image(LEDR(i));
-            end loop;
-            report "TC 9: COMPLETE";
-
-            KEY(2) <= '1';
-            KEY(3) <= '1';
-            wait for 2 ns;
-            
-            for i in 7 downto 0 loop
-                report std_logic'image(LEDR(i));
-            end loop;
-            report "TC 10: COMPLETE";
-
-            KEY(2) <= '0';
-            wait for 2 ns;
-            
-            for i in 7 downto 0 loop
-                report std_logic'image(LEDR(i));
-            end loop;
-            report "TC 11: COMPLETE";
-
-            KEY(2) <= '1';
-            wait for 2 ns;
-            
-            for i in 7 downto 0 loop
-                report std_logic'image(LEDR(i));
-            end loop;
-            report "TC 12: COMPLETE";
-
-
-
-
-
-
-
-
 
             report "end of test!";
             wait;

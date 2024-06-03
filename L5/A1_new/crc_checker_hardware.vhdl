@@ -73,14 +73,15 @@ architecture BEHAVIOR of crc_checker_hardware is
             end if;
 
             if (KEY(0) = '1') then
-                -- -- RESET
-                -- s_start_processing <= '1';
-                -- s_message <= (others => '0');
-                -- s_polynom <= (others => '0');
-                -- s_in_out <= '0';
-                -- s_mux <= (others => '0');
+                -- RESET
+                s_start_processing <= '1';
+                s_message <= (others => '0');
+                s_polynom <= (others => '0');
+                s_in_out <= '0';
+                s_mux <= (others => '0');
                 
-                -- TEMPORARY: SWITCH DISPLAY INPUT/OUTPUT
+            elsif (KEY(1) = '1') then 
+                -- SWITCH DISPLAY INPUT/OUTPUT
                 if (s_in_out = '0') then 
                     s_in_out <= '1';
                     LEDR(8) <= '1';
@@ -88,10 +89,6 @@ architecture BEHAVIOR of crc_checker_hardware is
                     s_in_out <= '0';
                     LEDR(9) <= '0';
                 end if;
-                
-            elsif (KEY(1) = '1') then 
-                -- START PROCESSING
-                s_start_processing <= '1';
             
             elsif (KEY(2) = '1') then
                 -- POLYNOM
@@ -108,8 +105,10 @@ architecture BEHAVIOR of crc_checker_hardware is
                 
                 if (SW(8) = '0' AND SW(9) = '0') then
                     -- 00 - 07
+                    -- ALSO START PROCESSING
                     s_message(7 downto 0) <= SW(7 downto 0);
                     LEDR(7 downto 0) <= s_message(7 downto 0);
+                    s_start_processing <= '1';
 
                 elsif (SW(8) = '1' AND SW(9) = '0') then 
                     -- 08 - 15
