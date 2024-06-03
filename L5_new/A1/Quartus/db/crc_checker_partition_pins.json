@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "P_ADR_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[9]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[10]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[11]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[12]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[13]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[14]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[15]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[16]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[17]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[18]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[19]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[20]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[21]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[22]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[23]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[24]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[25]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[26]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[27]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[28]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[29]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[30]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_OUT[31]",
+					"strict" : false
+				},
+				{
+					"name" : "P_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "P_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "P_WRITE",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADDRESS",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[9]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[10]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[11]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[12]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[13]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[14]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[15]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[16]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[17]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[18]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[19]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[20]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[21]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[22]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[23]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[24]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[25]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[26]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[27]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[28]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[29]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[30]",
+					"strict" : false
+				},
+				{
+					"name" : "P_ADR_IN[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

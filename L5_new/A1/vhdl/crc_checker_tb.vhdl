@@ -184,6 +184,19 @@ architecture TB of crc_checker_tb is
             s_clock <= '0';
             wait for 2 ns;
             report "---- clock cycle";
+ 
+            s_reset <= '0';
+            s_clock <= '1';
+            s_address <= '0';
+            s_write <= '0';
+            s_adr_in <= "11000111000000000000000000000001";
+            s_print_adr <= '1';
+            wait for 2 ns;
+            s_print_adr <= '0';
+            s_write <= '0';
+            s_clock <= '0';
+            wait for 2 ns;
+            report "---- clock cycle";
 
             report "end of test";
             wait;

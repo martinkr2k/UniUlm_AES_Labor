@@ -108,8 +108,9 @@ architecture BEHAVIOR of crc_checker is
                 
                 if (P_ADDRESS = '0') then 
                     for i in 31 downto 0 loop
-                        report std_logic'image(s_adr0_register(i));
+                        report std_logic'image(s_tmp_register(i));
                     end loop;
+                    report "tmp register!";
                 else 
                     for i in 31 downto 0 loop
                         report std_logic'image(s_adr1_register(i));
