@@ -11,7 +11,7 @@ entity crc_checker is
         P_WRITE :   in std_logic;
         P_ADR_IN :  in std_logic_vector(31 downto 0);
 
-        P_PRINT_ADR : in std_logic;
+        --P_PRINT_ADR : in std_logic;
 
         P_ADR_OUT : out std_logic_vector(31 downto 0)
     );
@@ -32,6 +32,7 @@ architecture BEHAVIOR of crc_checker is
         begin 
 
             if (P_RESET = '1') then 
+            --if (rising_edge(P_RESET)) then
                 -- RESET
                 s_adr0_register <= (others => '0');
                 s_adr1_register <= (others => '0');
@@ -42,6 +43,7 @@ architecture BEHAVIOR of crc_checker is
                 report "in reset";
             
             elsif (P_WRITE = '1') then 
+            --elsif (rising_edge(P_WRITE)) then
                 -- WRITE 
 
                 if (P_ADDRESS = '0') then 
@@ -49,10 +51,18 @@ architecture BEHAVIOR of crc_checker is
                     s_adr0_register <= P_ADR_IN;
                     report "in write message";
 
+                    for i in 31 downto 0 loop
+                        report std_logic'image(P_ADR_IN(i));
+                    end loop;
+
                 elsif (P_ADDRESS = '1') then 
                     -- POLYNOM
                     s_adr1_register <= P_ADR_IN;
                     report "in write polynom";
+
+                    for i in 31 downto 0 loop
+                        report std_logic'image(P_ADR_IN(i));
+                    end loop;
 
                 end if;
                 
@@ -103,19 +113,10 @@ architecture BEHAVIOR of crc_checker is
             end if;
 
             
-
-            if (P_PRINT_ADR = '1') then 
-                
-                if (P_ADDRESS = '0') then 
-                    for i in 31 downto 0 loop
-                        report std_logic'image(s_tmp_register(i));
-                    end loop;
-                    report "tmp register!";
-                else 
-                    for i in 31 downto 0 loop
-                        report std_logic'image(s_adr1_register(i));
-                    end loop;
-                end if;
+            if (falling_edge(P_CLOCK)) then    
+                for i in 31 downto 0 loop
+                    report std_logic'image(s_tmp_register(i));
+                end loop;
             end if;
 
         end process;
