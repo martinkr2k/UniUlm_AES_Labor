@@ -16,7 +16,7 @@ end crc_checker_hardware;
 architecture BEHAVIOR of crc_checker_hardware is 
         signal s_reset : std_logic := '1';
         signal s_address : std_logic := '0';
-        signal s_write : std_logic := '1';
+        signal s_write : std_logic := '0';
         signal s_adr_in : std_logic_vector(31 downto 0);
         signal s_adr_out : std_logic_vector(31 downto 0);
     begin 
