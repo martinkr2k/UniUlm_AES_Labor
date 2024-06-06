@@ -37,7 +37,7 @@ architecture BEHAVIOR of crc_checker is
                 s_counter <= "11111";
                 s_tmp_register <= (others => '0');
                 s_processing <= '0';
-					 P_ENABLE <= '0';
+				P_ENABLE <= '0';
             
             elsif (P_WRITE = '1') then 
                 -- WRITE 
