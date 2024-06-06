@@ -31,6 +31,7 @@ architecture BEHAVIOR of crc_checker_hardware is
         -- INPUT HANDLING
         process (KEY)
         begin 
+
             s_reset <= '0';
             s_write <= '0';
 
@@ -68,13 +69,13 @@ architecture BEHAVIOR of crc_checker_hardware is
 
             end if;
             
-            report "==== OUTPUT BEGIN";
-
-            for i in 31 downto 0 loop
-                report std_logic'image(s_adr_out(i));
-            end loop;
-
-            report "==== OUTPUT END";
+--            report "==== OUTPUT BEGIN";
+--
+--            for i in 31 downto 0 loop
+--                report std_logic'image(s_adr_out(i));
+--            end loop;
+--
+--            report "==== OUTPUT END";
 
         end process;
 

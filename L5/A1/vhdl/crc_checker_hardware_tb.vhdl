@@ -24,7 +24,6 @@ architecture TB of crc_checker_hardware_tb is
     
                 -- Message "11101110111011101110111110000000";
                 -- Polynom "11000111000000000000000000000001";
-                --
 
                 s_clock <= '1';
                 s_key <= "1111";
