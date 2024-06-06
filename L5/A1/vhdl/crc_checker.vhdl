@@ -11,7 +11,8 @@ entity crc_checker is
         P_ADDRESS : in std_logic;
         P_WRITE :   in std_logic;
         P_ADR_IN :  in std_logic_vector(31 downto 0);
-        P_ADR_OUT : out std_logic_vector(31 downto 0)
+        P_ADR_OUT : out std_logic_vector(31 downto 0);
+        P_ENABLE  : out std_logic
     );
 end crc_checker;
 
@@ -77,6 +78,7 @@ architecture BEHAVIOR of crc_checker is
                         s_processing <= '1';
                         s_counter <= "11111";
                         s_tmp_register <= s_adr0_register;
+                        P_ENABLE <= '1';
 --                        report "in processing init";
 
                     elsif (s_processing = '1') then 
@@ -86,6 +88,8 @@ architecture BEHAVIOR of crc_checker is
                             s_processing <= '0';
                             P_ADR_OUT(31 downto 7) <= s_adr0_register(31 downto 7);
                             P_ADR_OUT(6 downto 0) <= s_tmp_register(6 downto 0);
+                            s_adr1_register(0) <= '0';
+                            P_ENABLE <= '0';
 --                            report "in processing complete!";  
 
                         else 
@@ -111,11 +115,11 @@ architecture BEHAVIOR of crc_checker is
             end if;
 
             
---            if (falling_edge(P_CLOCK)) then    
---                for i in 31 downto 0 loop
---                    report std_logic'image(s_tmp_register(i));
---                end loop;
---            end if;
+            if (falling_edge(P_CLOCK)) then    
+                for i in 31 downto 0 loop
+                    report std_logic'image(s_tmp_register(i));
+                end loop;
+            end if;
 
         end process;
 

@@ -88,6 +88,7 @@ architecture BEHAVIOR of crc_checker is
                             s_processing <= '0';
                             P_ADR_OUT(31 downto 7) <= s_adr0_register(31 downto 7);
                             P_ADR_OUT(6 downto 0) <= s_tmp_register(6 downto 0);
+                            s_adr1_register(0) <= '0';
                             report "in processing complete!";  
 
                         else 

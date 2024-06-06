@@ -19,13 +19,14 @@ architecture BEHAVIOR of crc_checker_hardware is
         signal s_write : std_logic := '0';
         signal s_adr_in : std_logic_vector(31 downto 0) := "11000111000000000000000000000001";
         signal s_adr_out : std_logic_vector(31 downto 0) := (others => '0');
+        signal s_enable : std_logic := '0';
 
         -- Message "11101110111011101110111110000000";
         -- Polynom "11000111000000000000000000000001";
 
     begin 
 
-        CRC : entity work.crc_checker(BEHAVIOR) port map (s_reset, CLOCK_50, s_address, s_write, s_adr_in, s_adr_out);
+        CRC : entity work.crc_checker(BEHAVIOR) port map (s_reset, CLOCK_50, s_address, s_write, s_adr_in, s_adr_out, s_enable);
 
         -- INPUT HANDLING
         process (KEY)
@@ -34,11 +35,12 @@ architecture BEHAVIOR of crc_checker_hardware is
             s_write <= '0';
 
             -- REACT ON BUTTONS
-            if (falling_edge(KEY(1))) then 
+            if (KEY(1) = '0') then 
                 -- WRITE
                 s_write <= '1';
+                LEDR(9) <= '1';
 
-            elsif (rising_edge(KEY(1))) then
+            elsif (KEY(1) = '1') then
                 s_write <= '0';
 
             end if;
@@ -46,6 +48,10 @@ architecture BEHAVIOR of crc_checker_hardware is
 
         process (SW, s_adr_out)
         begin 
+
+            if (s_enable = '0') then 
+                LEDR(9) <= '0';
+            end if; 
             
             if (SW(9) = '0' AND SW(8) = '0') then 
                 LEDR(7 downto 0) <= s_adr_out(7 downto 0);

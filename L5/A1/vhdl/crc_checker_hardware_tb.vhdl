@@ -24,8 +24,26 @@ architecture TB of crc_checker_hardware_tb is
     
                 -- Message "11101110111011101110111110000000";
                 -- Polynom "11000111000000000000000000000001";
-                
-                -- WRITE
+                --
+
+                s_clock <= '1';
+                s_key <= "1111";
+                wait for 2 ns;
+                s_clock <= '0';
+                s_key <= "1111";
+                wait for 2 ns;
+                report "==== clock cycle!";
+
+                s_clock <= '1';
+                s_key <= "1111";
+                wait for 2 ns;
+                s_clock <= '0';
+                s_key <= "1111";
+                wait for 2 ns;
+                report "==== clock cycle - START PROCESSING NOW!";
+
+
+                ---- WRITE
                 s_clock <= '1';
                 s_key <= "1101";
                 wait for 2 ns;
