@@ -83,7 +83,7 @@ architecture BEHAVIOR of crc_checker is
 
                     elsif (s_processing = '1') then 
 
-                        if (s_counter = 6) then 
+                        if (s_counter <= 6) then 
                             -- PROCESSING COMPLETE
                             s_processing <= '0';
                             P_ADR_OUT(31 downto 7) <= s_adr0_register(31 downto 7);
