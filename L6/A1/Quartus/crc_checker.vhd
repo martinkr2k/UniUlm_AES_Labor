@@ -5,113 +5,85 @@ use IEEE.numeric_std.all;
 
 entity crc_checker is 
     port (
-        P_RESET :   in std_logic;
-        P_CLOCK :   in std_logic;
-        P_ADDRESS :  in std_logic;
-        P_WRITE :   in std_logic;
-        P_ADR_IN :  in std_logic_vector(31 downto 0);	  
-		  P_ADDRESS_OUT : out std_logic;
-        P_ADR_OUT : out std_logic_vector(31 downto 0)
+        CLOCK_50 : in std_logic;
+        SW : in std_logic_vector(9 downto 0);
+        KEY : in std_logic_vector(3 downto 0);
+        LEDR : out std_logic_vector(9 downto 0)
     );
 end crc_checker;
 
 
 architecture BEHAVIOR of crc_checker is 
+        signal s_reset : std_logic := '1';
+        signal s_address : std_logic := '0';
+        signal s_write : std_logic := '0';
+        signal s_adr_in : std_logic_vector(31 downto 0);
+        signal s_adr_out : std_logic_vector(31 downto 0);
+    begin 
 
-    signal s_adr0_register : std_logic_vector(31 downto 0);
-    signal s_adr1_register : std_logic_vector(31 downto 0);
-    signal s_processing : std_logic := '0';
-    signal s_counter : unsigned(4 downto 0) := "11111";
-    signal s_tmp_register : std_logic_vector(31 downto 0);
-	 signal s_processing_complete : std_logic := '0';
+        CRC : entity work.crc_checker_logic(BEHAVIOR) port map (s_reset, CLOCK_50, s_address, s_write, s_adr_in, s_adr_out);
 
-    begin
-        
-        process (P_RESET, P_CLOCK, P_WRITE, P_ADR_IN)
+        -- INPUT HANDLING
+        process (KEY)
         begin 
+            s_reset <= '0';
+            s_write <= '0';
 
-            if (P_RESET = '1') then 
+            -- REACT ON BUTTONS
+            if (KEY(0) = '0') then 
                 -- RESET
-                s_adr0_register <= (others => '0');
-                s_adr1_register <= (others => '0');
-                P_ADR_OUT <= (others => '0'); 
-                s_counter <= "11111";
-                s_tmp_register <= (others => '0');
-                s_processing <= '0';
-					 s_processing_complete <= '0';
---                report "in reset";
-            
-            elsif (P_WRITE = '1') then 
-                -- WRITE 
+                s_reset <= '1';
 
-                if (P_ADDRESS = '0') then 
-                    -- MESSAGE
-                    s_adr0_register <= P_ADR_IN;
---                    report "in write message";
+            elsif (KEY(1) = '0') then 
+                -- WRITE
+                s_write <= '1';
 
-                elsif (P_ADDRESS = '1') then 
-                    -- POLYNOM
-                    s_adr1_register <= P_ADR_IN;
- --                   report "in write polynom";
-
+            elsif (KEY(2) = '0') then 
+                -- CHOOSE ADDRESS
+                if (s_address = '0') then 
+                    s_address <= '1';
+                else 
+                    s_address <= '0';
                 end if;
-                
-                -- initialize processing again if new signal is written
-                s_processing <= '0';
-            
-            elsif (s_adr1_register(0) = '1') then 
-                -- processing only starting one clock cycle after loading it to register!!
 
-                if (rising_edge(P_CLOCK)) then 
-                
-                    if (s_processing = '0') then 
-                        -- INITIAL
-                        s_processing <= '1';
-                        s_counter <= "11111";
-                        s_tmp_register <= s_adr0_register;
- --                       report "in processing init";
+            elsif (KEY(3) = '0') then 
+                -- CONFIRM INPUT 
+                if (SW(9) = '0' AND SW(8) = '0') then 
+                    s_adr_in(7 downto 0) <= SW(7 downto 0);
+                    
+                elsif (SW(9) = '0'AND SW(8) = '1') then 
+                    s_adr_in(15 downto 8) <= SW(7 downto 0);
 
-                    elsif (s_processing = '1') then 
-							   
-								if (s_processing_complete = '1') then
-									-- CRC-CHECK COMPLETE - SET ENABLE TO '0'
-									s_processing_complete <= '0';
-									s_processing <= '0';
-									P_ADDRESS_OUT <= '0';
-                           P_ADR_OUT(31 downto 1) <= s_adr1_register(31 downto 1);
-                           P_ADR_OUT(0) <= '0';
-									
-                        elsif (s_counter = 6) then 
-                            -- CRC-PROCESSING COMPLETE
-                            s_processing_complete <= '1';
-									 P_ADDRESS_OUT <= '0';
-                            P_ADR_OUT(31 downto 7) <= s_adr0_register(31 downto 7);
-                            P_ADR_OUT(6 downto 0) <= s_tmp_register(6 downto 0);
---                            report "in processing complete!";  
+                elsif (SW(9) = '1'AND SW(8) = '0') then 
+                    s_adr_in(23 downto 16) <= SW(7 downto 0);
 
-                        else 
-                            -- PROCESSING STEP
-                        
-                            -- xor
-                            if (s_tmp_register(to_integer(s_counter)) = '1') then
-                                s_tmp_register(to_integer(s_counter) downto to_integer(s_counter) - 7) <= 
-                                s_tmp_register(to_integer(s_counter) downto to_integer(s_counter) - 7) XOR s_adr1_register(31 downto 24);
- --                               report "in processing xor!";
-                            else 
- --                               report "in processing no xor!";
-                            end if;
-
-                            -- shift
-                            s_counter <= s_counter - 1;
-                        end if;
-
-                    end if;
+                elsif (SW(9) = '1'AND SW(8) = '1') then 
+                    s_adr_in(31 downto 24) <= SW(7 downto 0);
 
                 end if;
 
             end if;
 
         end process;
+        
+        -- OUTPUT HANDLING
+        process (SW, s_adr_out) 
+        begin 
+            
+            if (SW(9) = '0' AND SW(8) = '0') then 
+                LEDR(7 downto 0) <= s_adr_out(7 downto 0);
+                
+            elsif (SW(9) = '0' AND SW(8) = '1') then 
+                LEDR(7 downto 0) <= s_adr_out(15 downto 8);
+                
+            elsif (SW(9) = '1' AND SW(8) = '0') then 
+                LEDR(7 downto 0) <= s_adr_out(23 downto 16);
+                
+            elsif (SW(9) = '1' AND SW(8) = '1') then 
+                LEDR(7 downto 0) <= s_adr_out(31 downto 24); 
+
+            end if;
+
+        end process;
 
 end BEHAVIOR;
-

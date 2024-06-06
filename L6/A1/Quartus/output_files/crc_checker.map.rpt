@@ -1,5 +1,5 @@
 Analysis & Synthesis report for crc_checker
-Mon Jun  3 13:59:33 2024
+Thu Jun  6 12:01:41 2024
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,13 +14,12 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -47,14 +46,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun  3 13:59:33 2024          ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun  6 12:01:41 2024          ;
 ; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                   ; crc_checker                                    ;
 ; Top-level Entity Name           ; crc_checker                                    ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
 ; Total registers                 ; 71                                             ;
-; Total pins                      ; 69                                             ;
+; Total pins                      ; 25                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -172,134 +171,135 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
-; crc_checker.vhd                  ; yes             ; User VHDL File  ; /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
-
-
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 261           ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 353           ;
-;     -- 7 input functions                    ; 0             ;
-;     -- 6 input functions                    ; 169           ;
-;     -- 5 input functions                    ; 61            ;
-;     -- 4 input functions                    ; 103           ;
-;     -- <=3 input functions                  ; 20            ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 71            ;
-;                                             ;               ;
-; I/O pins                                    ; 69            ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; P_RESET~input ;
-; Maximum fan-out                             ; 135           ;
-; Total fan-out                               ; 2289          ;
-; Average fan-out                             ; 4.07          ;
-+---------------------------------------------+---------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |crc_checker               ; 353 (353)           ; 71 (71)                   ; 0                 ; 0          ; 69   ; 0            ; |crc_checker        ; crc_checker ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                          ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+; crc_checker.vhd                  ; yes             ; User VHDL File  ; /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd       ;         ;
+; crc_checker_logic.vhd            ; yes             ; User VHDL File  ; /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 277          ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 369          ;
+;     -- 7 input functions                    ; 11           ;
+;     -- 6 input functions                    ; 173          ;
+;     -- 5 input functions                    ; 46           ;
+;     -- 4 input functions                    ; 82           ;
+;     -- <=3 input functions                  ; 57           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 71           ;
+;                                             ;              ;
+; I/O pins                                    ; 25           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 119          ;
+; Total fan-out                               ; 2209         ;
+; Average fan-out                             ; 4.51         ;
++---------------------------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
+; |crc_checker               ; 369 (47)            ; 71 (0)                    ; 0                 ; 0          ; 25   ; 0            ; |crc_checker                       ; crc_checker       ; work         ;
+;    |crc_checker_logic:CRC| ; 322 (322)           ; 71 (71)                   ; 0                 ; 0          ; 0    ; 0            ; |crc_checker|crc_checker_logic:CRC ; crc_checker_logic ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; s_adr1_register[0]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[1]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[2]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[3]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[4]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[5]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[6]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr1_register[7]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[7]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[8]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[8]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[9]                                  ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[9]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[10]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[10]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[11]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[11]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[12]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[12]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[13]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[13]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[14]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[14]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[15]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[15]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[16]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[16]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[17]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[17]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[18]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[18]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[19]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[19]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[20]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[20]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[21]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[21]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[22]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[22]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[23]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[23]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[24]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[24]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[25]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[25]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[26]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[26]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[27]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[27]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[28]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[28]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[29]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[29]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[30]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[30]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr1_register[31]                                 ; s_adr1_register[0]  ; yes                    ;
-; s_adr0_register[31]                                 ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[0]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[1]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[2]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[3]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[4]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[5]                                  ; s_adr0_register[0]  ; yes                    ;
-; s_adr0_register[6]                                  ; s_adr0_register[0]  ; yes                    ;
-; Number of user-specified and inferred latches = 64  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; crc_checker_logic:CRC|s_adr0_register[16]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[24]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[8]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[17]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[25]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[9]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[18]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[26]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[10]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[19]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[27]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[11]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[20]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[28]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[12]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[21]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[29]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[13]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[22]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[30]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[14]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[23]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[31]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[15]           ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[7]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[16]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_address                                           ; s_address                                 ; yes                    ;
+; s_adr_in[0]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[24]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[8]                                         ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[24]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[0]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[17]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[25]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[9]                                         ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[25]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[1]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[18]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[26]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[10]                                        ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[26]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[2]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[19]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[27]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[11]                                        ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[27]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[3]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[20]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[28]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[12]                                        ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[28]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[4]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[21]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[29]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[13]                                        ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[29]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[5]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[22]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[30]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[14]                                        ; s_adr_in[8]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[30]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; crc_checker_logic:CRC|s_adr0_register[6]            ; crc_checker_logic:CRC|s_adr0_register[0]  ; yes                    ;
+; s_adr_in[23]                                        ; s_adr_in[16]                              ; yes                    ;
+; s_adr_in[31]                                        ; s_adr_in[24]                              ; yes                    ;
+; s_adr_in[15]                                        ; s_adr_in[8]                               ; yes                    ;
+; s_adr_in[7]                                         ; s_adr_in[0]                               ; yes                    ;
+; crc_checker_logic:CRC|s_adr1_register[31]           ; crc_checker_logic:CRC|s_adr1_register[24] ; yes                    ;
+; s_adr_in[1]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[2]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[3]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[4]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[5]                                         ; s_adr_in[0]                               ; yes                    ;
+; s_adr_in[6]                                         ; s_adr_in[0]                               ; yes                    ;
+; Number of user-specified and inferred latches = 73  ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; P_ADDRESS_OUT~reg0                    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -308,11 +308,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 71    ;
-; Number of registers using Synchronous Clear  ; 2     ;
-; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 71    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 66    ;
+; Number of registers using Clock Enable       ; 65    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -322,25 +322,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; s_counter[1]                           ; 75      ;
-; s_counter[2]                           ; 82      ;
-; s_counter[0]                           ; 56      ;
-; s_counter[4]                           ; 63      ;
-; s_counter[3]                           ; 73      ;
+; crc_checker_logic:CRC|s_counter[2]     ; 78      ;
+; crc_checker_logic:CRC|s_counter[1]     ; 72      ;
+; crc_checker_logic:CRC|s_counter[0]     ; 53      ;
+; crc_checker_logic:CRC|s_counter[4]     ; 72      ;
+; crc_checker_logic:CRC|s_counter[3]     ; 72      ;
 ; Total number of inverted registers = 5 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 0 LEs                ; 62 LEs                 ; Yes        ; |crc_checker|P_ADR_OUT[1]~reg0 ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |crc_checker|s_counter[4]      ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |crc_checker|Mux8              ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |crc_checker|Mux8              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |crc_checker|crc_checker_logic:CRC|s_counter[1] ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |crc_checker|crc_checker_logic:CRC|Mux8         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |crc_checker|LEDR[0]                            ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |crc_checker|crc_checker_logic:CRC|Mux6         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -349,21 +349,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 71                          ;
-;     CLR               ; 5                           ;
-;     ENA CLR SCLR      ; 2                           ;
-;     ENA CLR SLD       ; 64                          ;
-; arriav_lcell_comb     ; 354                         ;
-;     normal            ; 354                         ;
+;     CLR               ; 6                           ;
+;     ENA CLR           ; 32                          ;
+;     ENA CLR SLD       ; 33                          ;
+; arriav_lcell_comb     ; 370                         ;
+;     extend            ; 11                          ;
+;         7 data inputs ; 11                          ;
+;     normal            ; 359                         ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 11                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 103                         ;
-;         5 data inputs ; 61                          ;
-;         6 data inputs ; 169                         ;
-; boundary_port         ; 69                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 82                          ;
+;         5 data inputs ; 46                          ;
+;         6 data inputs ; 173                         ;
+; boundary_port         ; 25                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.37                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -382,85 +384,130 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Mon Jun  3 13:59:26 2024
+    Info: Processing started: Thu Jun  6 12:01:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off crc_checker -c crc_checker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file crc_checker.vhd
-    Info (12022): Found design unit 1: crc_checker-BEHAVIOR File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 19
-    Info (12023): Found entity 1: crc_checker File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 6
+    Info (12022): Found design unit 1: crc_checker-BEHAVIOR File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 16
+    Info (12023): Found entity 1: crc_checker File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file crc_checker_logic.vhd
+    Info (12022): Found design unit 1: crc_checker_logic-BEHAVIOR File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 18
+    Info (12023): Found entity 1: crc_checker_logic File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 6
 Info (12127): Elaborating entity "crc_checker" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at crc_checker.vhd(47): signal "P_ADDRESS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 47
-Warning (10492): VHDL Process Statement warning at crc_checker.vhd(52): signal "P_ADDRESS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at crc_checker.vhd(62): signal "s_adr1_register" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at crc_checker.vhd(30): inferring latch(es) for signal or variable "s_adr0_register", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Warning (10631): VHDL Process Statement warning at crc_checker.vhd(30): inferring latch(es) for signal or variable "s_adr1_register", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[0]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[1]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[2]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[3]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[4]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[5]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[6]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[7]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[8]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[9]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[10]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[11]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[12]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[13]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[14]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[15]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[16]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[17]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[18]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[19]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[20]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[21]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[22]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[23]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[24]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[25]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[26]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[27]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[28]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[29]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[30]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr1_register[31]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[0]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[1]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[2]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[3]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[4]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[5]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[6]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[7]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[8]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[9]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[10]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[11]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[12]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[13]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[14]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[15]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[16]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[17]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[18]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[19]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[20]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[21]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[22]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[23]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[24]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[25]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[26]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[27]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[28]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[29]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[30]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
-Info (10041): Inferred latch for "s_adr0_register[31]" at crc_checker.vhd(30) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(43): signal "s_address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(51): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 51
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(52): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(54): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(55): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(57): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(58): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(60): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at crc_checker.vhd(61): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 61
+Warning (10631): VHDL Process Statement warning at crc_checker.vhd(27): inferring latch(es) for signal or variable "s_address", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Warning (10631): VHDL Process Statement warning at crc_checker.vhd(27): inferring latch(es) for signal or variable "s_adr_in", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Warning (10631): VHDL Process Statement warning at crc_checker.vhd(70): inferring latch(es) for signal or variable "LEDR", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at crc_checker.vhd(11) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 11
+Info (10041): Inferred latch for "LEDR[0]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[1]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[2]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[3]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[4]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[5]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[6]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "LEDR[7]" at crc_checker.vhd(70) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Info (10041): Inferred latch for "s_adr_in[0]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[1]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[2]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[3]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[4]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[5]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[6]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[7]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[8]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[9]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[10]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[11]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[12]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[13]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[14]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[15]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[16]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[17]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[18]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[19]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[20]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[21]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[22]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[23]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[24]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[25]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[26]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[27]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[28]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[29]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[30]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_adr_in[31]" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (10041): Inferred latch for "s_address" at crc_checker.vhd(27) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 27
+Info (12129): Elaborating entity "crc_checker_logic" using architecture "A:behavior" for hierarchy "crc_checker_logic:CRC" File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at crc_checker_logic.vhd(45): signal "P_ADDRESS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at crc_checker_logic.vhd(49): signal "P_ADDRESS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at crc_checker_logic.vhd(58): signal "s_adr1_register" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 58
+Warning (10631): VHDL Process Statement warning at crc_checker_logic.vhd(28): inferring latch(es) for signal or variable "s_adr0_register", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at crc_checker_logic.vhd(28): inferring latch(es) for signal or variable "s_adr1_register", which holds its previous value in one or more paths through the process File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[24]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[25]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[26]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[27]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[28]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[29]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[30]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr1_register[31]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[0]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[1]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[2]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[3]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[4]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[5]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[6]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[7]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[8]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[9]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[10]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[11]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[12]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[13]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[14]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[15]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[16]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[17]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[18]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[19]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[20]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[21]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[22]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[23]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[24]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[25]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[26]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[27]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[28]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[29]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[30]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Info (10041): Inferred latch for "s_adr0_register[31]" at crc_checker_logic.vhd(28) File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 28
+Warning (14026): LATCH primitive "LEDR[0]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[1]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[2]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[3]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[4]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[5]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[6]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (14026): LATCH primitive "LEDR[7]$latch" is permanently enabled File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 70
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "crc_checker_logic:CRC|s_adr1_register[0]" is converted into an equivalent circuit using register "crc_checker_logic:CRC|s_adr1_register[0]~_emulated" and latch "crc_checker_logic:CRC|s_adr1_register[0]~1" File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker_logic.vhd Line: 61
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "P_ADDRESS_OUT" is stuck at GND File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L5_new/A1/Quartus/crc_checker.vhd Line: 13
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 11
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/mk179/semesters/semester2/aes/labor/github/UniUlm_AES_Labor/L6/A1/Quartus/crc_checker.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "lights" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity lights -section_id Top was ignored
@@ -489,14 +536,14 @@ Warning (20013): Ignored 24 assignments for entity "lights" -- entity does not e
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity lights -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 454 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 36 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 385 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 524 megabytes
-    Info: Processing ended: Mon Jun  3 13:59:33 2024
+Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 401 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 523 megabytes
+    Info: Processing ended: Thu Jun  6 12:01:41 2024
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
 
 

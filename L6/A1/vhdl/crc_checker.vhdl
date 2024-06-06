@@ -40,7 +40,6 @@ architecture BEHAVIOR of crc_checker is
                 s_counter <= "11111";
                 s_tmp_register <= (others => '0');
                 s_processing <= '0';
-                report "in reset";
             
             elsif (P_WRITE = '1') then 
             --elsif (rising_edge(P_WRITE)) then
@@ -49,20 +48,10 @@ architecture BEHAVIOR of crc_checker is
                 if (P_ADDRESS = '0') then 
                     -- MESSAGE
                     s_adr0_register <= P_ADR_IN;
-                    report "in write message";
-
-                    for i in 31 downto 0 loop
-                        report std_logic'image(P_ADR_IN(i));
-                    end loop;
 
                 elsif (P_ADDRESS = '1') then 
                     -- POLYNOM
                     s_adr1_register <= P_ADR_IN;
-                    report "in write polynom";
-
-                    for i in 31 downto 0 loop
-                        report std_logic'image(P_ADR_IN(i));
-                    end loop;
 
                 end if;
                 
@@ -79,7 +68,6 @@ architecture BEHAVIOR of crc_checker is
                         s_processing <= '1';
                         s_counter <= "11111";
                         s_tmp_register <= s_adr0_register;
-                        report "in processing init";
 
                     elsif (s_processing = '1') then 
 
@@ -89,7 +77,6 @@ architecture BEHAVIOR of crc_checker is
                             P_ADR_OUT(31 downto 7) <= s_adr0_register(31 downto 7);
                             P_ADR_OUT(6 downto 0) <= s_tmp_register(6 downto 0);
                             s_adr1_register(0) <= '0';
-                            report "in processing complete!";  
 
                         else 
                             -- PROCESSING STEP
@@ -98,9 +85,6 @@ architecture BEHAVIOR of crc_checker is
                             if (s_tmp_register(to_integer(s_counter)) = '1') then
                                 s_tmp_register(to_integer(s_counter) downto to_integer(s_counter) - 7) <= 
                                 s_tmp_register(to_integer(s_counter) downto to_integer(s_counter) - 7) XOR s_adr1_register(31 downto 24);
-                                report "in processing xor!";
-                            else 
-                                report "in processing no xor!";
                             end if;
 
                             -- shift
@@ -111,13 +95,6 @@ architecture BEHAVIOR of crc_checker is
 
                 end if;
 
-            end if;
-
-            
-            if (falling_edge(P_CLOCK)) then    
-                for i in 31 downto 0 loop
-                    report std_logic'image(s_tmp_register(i));
-                end loop;
             end if;
 
         end process;
