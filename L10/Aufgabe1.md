@@ -29,10 +29,10 @@ Section | Time(sec) | Time (ms) | Time (clocks)
 
  ### Software-Implementierung:
 
-Vorteile: Flexibilität, kürzere Entwicklungszeit, geringere Kosten.
+Vorteile: Flexibilität, kürzere Entwicklungszeit, geringere Kosten.\
 Nachteile: Höherer Energieverbrauch, längere Laufzeiten, höhere CPU-Belastung.
 
 ### Hardware-Implementierung:
 
-Vorteile: Niedriger Energieverbrauch, kürzere Laufzeiten, entlastet die CPU.
+Vorteile: Niedriger Energieverbrauch, kürzere Laufzeiten, entlastet die CPU.\
 Nachteile: Weniger flexibel, längere Entwicklungszeit, höhere Kosten.
